@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>1310</y>
+      <w>230</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>DibujarPalabras
+--
+Fuente: Font
+palabra: String
+posicionXPalabra: int
+posicionYPalabra: int
+timer: Timer
+--
+DibujarPlabras()
+setPpalabra(): void
+paintComponent(Graphics): void
+actionPerformed(ActionEvent): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>310</y>
+      <w>230</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>GUIHistorialJugadores
+--
+areaDeInformacion: JTextArea
+contenedorInformacion: JPanel
+vistaGUIMenu: GUIMenu
+regresar: JButton
+escucha: Escucha
+managerFiles: managerFiles
+timer:Timer
+--
+GUIHistorialJugadores()
+initGUI(): void
+cambiarDeVentana(): void
+Escucha</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>650</x>
+      <y>580</y>
+      <w>360</w>
+      <h>850</h>
+    </coordinates>
+    <panel_attributes>GUIJuego
+--
+puntaje: JLabel
+nivel: JLabel
+palabrasAcertadas: JLabel
+palabrasErradas: JLabel
+ingresar: JLabel
+tiempo: JLabel
+serie: JLabel
+puntos: JTextField
+nivelActual: JTextField
+ingresarPalabra: JTextField
+serieActual: JTextField
+palabrasCorrectas: JTextArea
+palabrasIncorrectas: JTextArea
+areaDeRespuesta: JPanel
+datosDelJuego: JPanel
+palabrasIntroducidas: JPanel
+inciar: JPanel
+correcto: JButton
+incorrecto: JButton
+comprobar: JButton
+terminarSerie: JButton
+terminar: JButton
+iniciarAhora: JButton
+palabras: Palabras
+palabrasMostradas: String[]
+palabrasQueAcierto: String[]
+escucha: Escucha
+vistaGUIMenu: JFrame
+miMisma: JFrame
+dibujarPalabras: DibujarPalabras
+managerFiles: ManagerFiles
+managerObjects: ManagerObjects
+centecimas: int
+segundos: int
+minutos: int
+cuentaPalabras: int
+timerCronometro: Timer
+timerPalabras: Timer
+timer:Timer
+sounds: Sounds
+--
+GUIJuego()
+initGUI(): void
+cronometro(): void
+mostrarPalabras(): void
+comprobarPalabra(): void
+avanzar(): void
+comprobarSiPuedePasarDeNivel(): void
+bloquearPanelDelJugador(): void
+comprobarPalabrasAcertadasRepetidas(String): boolean
+reiniciarValores(): void
+Escucha</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>260</y>
+      <w>330</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>GUIMenu
+--
+opciones: JPanel
+fondoDePantalla: JPanel
+nuevoJuego: JButton
+continuarJuego: JButton
+historialJugadores: JButton
+salir: JButton
+fondo: ImageIcon
+contenedorFondo: JLabel
+escucha: Escucha
+miMisma: JFrame
+vistaGUIHsitorialJugadores: GUIHistorialJugadores
+vistaGUIJuego: GUIJuego
+timer: Timer
+managerFiles: ManagerFiles
+--
+GUIMenu()
+initGUI(): void
+Escucha</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>0</y>
+      <w>190</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>GUIInicio
+--
+datosUsuario: JPanel
+fondoPantalla: JPanel
+pedirNombre: JTextField
+okInicio: JButton
+escucha: Escucha
+managerFiles: ManagerFiles
+historialJugadores: String[]
+nombreJugador: String
+--
+GUIInicio(JFrame)
+initGUI(): void
+cambiarDeVentana(): void
+crearFile(): void
+Escucha</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>400</y>
+      <w>280</w>
+      <h>520</h>
+    </coordinates>
+    <panel_attributes>Palabras
+--
+nivel: int
+serie: int
+puntaje: int
+numeroFallos: int
+numeroAciertos: int
+numeroPalabrasDeLaSerie: int
+numeroPalabrasParaSuperarNivel: int
+numeroPalabrasMostradas: int
+primeraVez: boolean
+nombreJugadore: String
+--
+Palabras()
+reglasParaAvanzar(): void
+sumarFallo(): void
+sumarAcierto(): void
+pasarNivel(): void
+pasarSerie(boolean): void
+reiniciar: void
+sumarPalabrasMostradas(int): void
+yaHaJugado(): vod
+setNombreJugador(String): void
+getNivel(): int
+getPuntaje(): int
+getSerie(): int
+getNumeroPalabrasDeLaSerie(): int
+getNumeroPalabrasParaSuperarNivel(): int
+getNumeroPalabrasMostradas(): int
+getNumeroAciertos(): int
+getNumeroFallos(): int
+isPrimeraVez(): boolean
+getNombreJugador(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>940</y>
+      <w>270</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>ManagerObjects
+--
+fileInput: FileInputStream
+input: ObjectInputStream
+fileOutput: FileOutputStream
+output: ObjectOutputStream
+--
+serializarObjeto(String, Palabras): void
+deserializarObjetoString(String): Palabras</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>670</y>
+      <w>290</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>ManagerFiles
+--
+fileReader: FileReader
+input: BufferedReader
+fileWriter: FileWriter
+output: BufferedWriter
+--
+abrirArchivo(String): String
+elegirPalabrasArchivo(String, int, int): String[]
+definirLargoArrayJugadores(): int
+leerHistorialJugadores(): String[]
+escribirArchivo(String, String): voidd
+borrarArchivo(String): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>260</y>
+      <w>220</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Sounds
+--
+fileSounds: File
+audioStream: AudioInputStream
+clip: Clip
+--
+Sounds()
+playSounds(int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>390</y>
+      <w>170</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>PrincipalJuegoPalabras
+--
+--
+main(String[]): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>410</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>110</y>
+      <w>90</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>400</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>460</y>
+      <w>80</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;300.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>310</y>
+      <w>110</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;340.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>770</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>1000</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>750</y>
+      <w>80</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>1330</y>
+      <w>110</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>560</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>230</y>
+      <w>90</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;440.0;70.0;10.0</additional_attributes>
+  </element>
+</diagram>
